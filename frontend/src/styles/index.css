@@ -1,46 +1,91 @@
-.chatbox-container {
-    width: 300px;
-    height: 400px;
-    border: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .messages {
-    flex: 1;
-    padding: 10px;
-    overflow-y: scroll;
-  }
-  
-  .input-container {
-    display: flex;
-    padding: 10px;
-  }
-  
-  input[type="text"] {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    padding: 8px 12px;
-    margin-left: 8px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-  }
-  
-  .message {
-    margin-bottom: 10px;
-  }
-  
-  .message.user {
-    text-align: right;
-  }
-  
-  .message.bot {
-    text-align: left;
-  }  
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* Add default font */
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-y : auto;
+}
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Cursive', sans-serif; /* A softer font for the title */
+  font-size: 3rem;
+  color: orange; /* Orange color for the title */
+}
+
+.chatbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #333; /* Dark background for chatbox */
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  height: 500px;
+  overflow-y : auto;
+}
+
+.messages {
+  overflow-y: auto;
+  flex-grow: 0;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between messages */
+}
+
+.message {
+  display: inline-block; /* Allows the box to scale with the text */
+  max-width: 70%; /* Limit the width of the message box */
+  padding: 10px;
+  border-radius: 10px;
+  word-wrap: break-word; /* Ensure text wraps within the box */
+  overflow-wrap: break-word; /* Additional support for wrapping long words */
+  margin-bottom: 5px; /* Space between messages */
+}
+
+.user-message {
+  background-color: orange;
+  align-self: flex-end; /* Align user messages to the right */
+  color: black;
+}
+
+.bot-message {
+  background-color: #333;
+  align-self: flex-start; /* Align bot messages to the left */
+  color: white;
+}
+
+.input-area {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px;
+  background-color: orange; /* Orange theme */
+  border: none;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: darkorange; /* Darker orange on hover */
+}

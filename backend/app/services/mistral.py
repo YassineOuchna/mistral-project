@@ -1,7 +1,11 @@
 import os
 from mistralai import Mistral
+from dotenv import load_dotenv
 
-MISTRAL_API_KEY = "nVbjyTzCdOGBNjDWucg6D8wtS3O2hRUX"
+# Loading env variables
+load_dotenv()
+
+MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 
 def get_response(user_message: str) -> str:
     """

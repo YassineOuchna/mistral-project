@@ -1,13 +1,12 @@
 import React from 'react';
 
-const Message = ({ message }) => {
-  const { text, sender } = message;
-
+function Message({ text, sender }) {
   return (
-    <div className={`message ${sender}`}>
-      <p>{text}</p>
-    </div>
+    <div
+      className={`message ${sender === "user" ? "user-message" : "bot-message"}`}
+      dangerouslySetInnerHTML={{ __html: text }} // Render rich text
+    />
   );
-};
+}
 
 export default Message;

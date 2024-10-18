@@ -22,7 +22,7 @@ const ChatBox = () => {
     <div className="chatbox-container">
       <div className="messages">
         {messages.map((msg, index) => (
-          <Message key={index} message={msg} />
+          <Message key={index} text={msg.text} sender={msg.sender} />
         ))}
       </div>
       <div className="input-container">
